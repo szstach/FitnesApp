@@ -1,0 +1,102 @@
+<div class="container" >
+<div class="form-group" ng-controller="Glowny">
+                        
+
+                        <div class="col-sm-4" ng-controller="Baza">
+                            Węglowodany
+                            <select
+                                id="uSpec"
+                                ng-model="wegle.form"
+                                ng-options="wegle.nazwa for wegle in carbo "
+                                
+                                class="form-control">
+                                <option value="">{{opcjeWyboru}}</option>
+                            </select>
+
+                        <div class="list-group" >
+                                    <a href="" class="list-group-item active">
+                                      <h4 class="list-group-item-heading">{{ wegle.form.nazwa }}</h4>
+                                      <p class="list-group-item-text">{{ wegle.form.macro }}</p>
+                                    </a>
+                                    <a href="" class="list-group-item">
+                                      <h4 class="list-group-item-heading">{{ wegle.form.kalorie }}</h4>
+                                      <p class="list-group-item-text">Kalorii</p>
+                                    </a>
+                                    <a href="" class="list-group-item">
+                                        
+                                      <h4 class="list-group-item-heading"> <h6>{{wegle.form.weglowodany }}g Węglowodanów</h6></h4>
+                                                                            <h6>{{wegle.form.bialka}}g Białka</h6></h4>
+                                                                            <h6>{{wegle.form.tluszcze }}g Tłuszczów</h6></h4>
+
+                                     </a>
+                        </div></div>
+
+
+                        <div class="col-sm-4" ng-controller="BazaBialek">
+                            Białko
+                            <select
+                                id="Bia"
+                                ng-model="bialko.form"
+                                ng-options="bialko.nazwa for bialko in bialka "
+                                
+                                class="form-control">
+                                <option value="">{{opcjeWyboru}}</option>
+                            </select>
+
+                        <div class="list-group" >
+                                    <a href="" class="list-group-item active">
+                                      <h4 class="list-group-item-heading">{{ bialko.form.nazwa }}</h4>
+                                      <p class="list-group-item-text">{{ bialko.form.macro }}</p>
+                                    </a>
+                                    <a href="" class="list-group-item">
+                                      <h4 class="list-group-item-heading">{{ bialko.form.kalorie }}</h4>
+                                      <p class="list-group-item-text">Kalorii</p>
+                                    </a>
+                                 <a href="" class="list-group-item">
+                                        
+                                      <h4 class="list-group-item-heading"> <h6>{{bialko.form.weglowodany }}g Węglowodanów</h6></h4>
+                                                                            <h6>{{bialko.form.bialka}}g Białka</h6></h4>
+                                                                            <h6>{{bialko.form.tluszcze }}g Tłuszczów</h6></h4>
+
+                                     </a>
+                        </div></div>
+
+
+                    <div class="col-sm-4" ng-controller="BazaTluszczy">
+                            Tluszcze
+                            <select
+                                id="uSpec"
+                                ng-model="tluszcz.form"
+                                ng-options="tluszcz.nazwa for tluszcz in tluszcze "
+                                
+                                class="form-control">
+                                <option value="">{{opcjeWyboru}}</option>
+                            </select>
+
+                        <div class="list-group" >
+                                    <a href="" class="list-group-item active">
+                                      <h4 class="list-group-item-heading">{{ tluszcz.form.nazwa }}</h4>
+                                      <p class="list-group-item-text">{{ tluszcz.form.macro }}</p>
+                                    </a>
+                                    <a href="" class="list-group-item">
+                                      <h4 class="list-group-item-heading">{{ tluszcz.form.kalorie }}</h4>
+                                      <p class="list-group-item-text">Kalorii</p>
+                                    </a>
+                                    <a href="" class="list-group-item">
+                                        
+                                      <h4 class="list-group-item-heading"> <h6>{{tluszcz.form.weglowodany }}g Węglowodanów</h6></h4>
+                                                                            <h6>{{tluszcz.form.bialka}}g Białka</h6></h4>
+                                                                            <h6>{{tluszcz.form.tluszcze }}g Tłuszczów</h6></h4>
+
+                                     </a>
+                        </div></div>
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+

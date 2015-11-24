@@ -1,0 +1,25 @@
+[ {
+      "nazwa":"Oliwa z oliwek",
+      "macro": "Tluszcz",
+      "tluszcze":"17",
+      "bialka": "20",
+      "weglowodany": "0",
+      "kalorie":"80"
+   },
+   {
+      "nazwa":"Orzechy",
+      "macro": "Tluszcz",
+      "tluszcze":"17",
+      "bialka": "20",
+      "weglowodany": "0",
+      "kalorie":"80"
+   },
+   {
+      "nazwa":"Awokado",
+      "macro": "Tluszcz",
+      "tluszcze": "17",
+      "bialka": "20",
+      "weglowodany": "0",
+      "kalorie":"80"
+   }
+   ]

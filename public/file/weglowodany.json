@@ -1,0 +1,30 @@
+[
+   {
+      "nazwa":"Ryz Bialy",
+      "macro": "Weglowodany",
+      "tluszcze":"17",
+      "bialka": "20",
+      "weglowodany": "0",
+      "kalorie":"344"
+   },
+
+   {
+      "nazwa":"Ziemniaki",
+      "macro": "Weglowodany",
+      "tluszcze":"17",
+      "bialka": "20",
+      "weglowodany": "0",
+      "kalorie":"80"
+   },
+    
+      {
+      "nazwa":"Bataty",
+      "macro": "Weglowodany",
+      "tluszcze":"17",
+      "bialka": "20",
+      "weglowodany": "0",
+      "kalorie":"80"
+   }
+
+
+]

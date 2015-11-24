@@ -1,0 +1,84 @@
+	<div ng-controller="mainControllerf">
+<div ng-controller="FormController" >
+
+<div class="jumbotron text-center">
+			<h1>Ilość użytkowników <span class="label label-info">{{ forms.length }} </span></h1>
+		</div>
+<div class="container" >
+	<div class="form-group">
+<form  name="form" class="form-horizontal" id="UsersForm">     
+                        
+
+                        <div class="col-sm-12" ng-controller="mainControllerf">
+                            
+                            <select
+                                id="uSpec"
+                                ng-model="UsersForm"
+                                ng-options="us.namee for us in forms "
+                                required="required"
+                                class="form-control">
+                                <option value="">wybierz </option>
+                            </select>
+
+                          
+                        <div class="list-group" ng-show="UsersForm">
+                                    <a href="" class="list-group-item active">
+                                      <h4 class="list-group-item-heading" ng-model="formA" ng-click="deleteForm(form._id)"> {{ UsersForm.namee }} </h4>
+                                      <p class="list-group-item-text">{{ form.plec }}</p>
+                                    </a>
+                            
+                                                                  
+                            
+                                    <a href="" class="list-group-item">
+                                      <h4 class="list-group-item-heading"></h4>
+                                      <p class="list-group-item-text">Zapotrzebowanie kaloryczne to {{ kalorie(UsersForm.plec, UsersForm.cel, UsersForm.waga, UsersForm.wzrost, UsersForm.wiek, UsersForm.aktywnosc)  | limitTo:4 }} Kalorii</p>
+                                    </a>
+                                    <a href="" class="list-group-item" >
+                                    Twoje  BMI    {{ bbi(UsersForm.waga, UsersForm.wzrost) | number:2 }}
+                                      <h4 class="list-group-item-heading"> </h4>
+                                                                            <h6>{{ kalorie(UsersForm.plec, UsersForm.cel, UsersForm.waga, UsersForm.wzrost, UsersForm.wiek, UsersForm.aktywnosc)*0.15  | limitTo:4 }}g Kalori z Białka</h6></h4>
+                                                                            <h6>{{kalorie(UsersForm.plec, UsersForm.cel, UsersForm.waga, UsersForm.wzrost, UsersForm.wiek, UsersForm.aktywnosc)*0.3  | limitTo:4 }}g Tłuszczów</h6></h4>
+
+                             <h6>{{kalorie(UsersForm.plec, UsersForm.cel, UsersForm.waga, UsersForm.wzrost, UsersForm.wiek, UsersForm.aktywnosc)*0.55  | limitTo:4 }}g Weglowodanow</h6>
+                                     </a>
+                        </div</div>
+
+
+
+
+                          
+
+        
+</form>
+        
+        
+        
+        
+
+<div ng-repeat="form in forms">
+                        <div class="col-sm-2" >
+
+                           
+                        <div class="list-group" >
+                                    <a href="" class="list-group-item active">
+                                      <h4 class="list-group-item-heading" ng-model="formA" ng-click="deleteForm(form._id)">Usuń {{ form.namee }}</h4>
+                                      
+                                    </a>
+                                    
+                        </div></div>
+
+
+
+
+
+
+</div>
+
+
+
+</diV>
+
+</div></div>
+
+
+

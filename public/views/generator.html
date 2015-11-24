@@ -1,0 +1,172 @@
+	<div class="jumbotron text-center">
+			<h1>Ilość posiłków <span class="label label-info">{{ todos.length }}</span></h1>
+		</div>
+
+<div ng-controller="mainControllerf">
+<div ng-controller="FormController" >
+<h2>{{ toto }}</h2>
+</div></div>
+<div class="container" >
+	<div class="form-group">
+<form  name="form" class="form-horizontal" id="formData">     
+                        
+
+                        <div class="col-sm-4" ng-controller="Baza">
+                            
+                            <select
+                                id="uSpec"
+                                ng-model="formData.text"
+                                ng-options="wegle.nazwa for wegle in carbo "
+                                required="required"
+                                class="form-control">
+                                <option value="">{{opcjeWyboru}}</option>
+                            </select>
+
+                        <div class="list-group" >
+                                    <a href="" class="list-group-item active">
+                                      <h4 class="list-group-item-heading" ng-model="formData.text"> </h4>
+                                      <p class="list-group-item-text">Węglowodany</p>
+                                    </a>
+                                    <a href="" class="list-group-item">
+                                      <h4 class="list-group-item-heading">{{ formData.text.kalorie }}</h4>
+                                      <p class="list-group-item-text">Kalorii</p>
+                                    </a>
+
+                        </div></div>
+
+
+
+                        <div class="col-sm-4" ng-controller="BazaBialek">
+                            
+                            <select
+                                id="Bia"
+                                ng-model="formData.text1"
+                                ng-options="bialko.nazwa for bialko in bialka "
+                                required="required"
+                                class="form-control">
+                                <option value="">{{opcjeWyboru}}</option>
+                            </select>
+
+                        <div class="list-group" >
+                                    <a href="" class="list-group-item active">
+                                      <h4 class="list-group-item-heading"> </h4>
+                                      <p class="list-group-item-text">Białko</p>
+                                    </a>
+                                    <a href="" class="list-group-item">
+                                      <h4 class="list-group-item-heading">{{ formData.text1.kalorie }}</h4>
+                                      <p class="list-group-item-text">Kalorii</p>
+                                    </a>
+
+                        </div></div>
+
+
+                    <div class="col-sm-4" ng-controller="BazaTluszczy">
+                            
+                            <select
+                                id="uSpec"
+                                ng-model="formData.text2"
+                                ng-options="tluszcz.nazwa for tluszcz in tluszcze "
+                                required="required"
+                                class="form-control">
+                                <option value="">{{opcjeWyboru}}</option>
+                            </select>
+
+                        <div class="list-group" >
+                                    <a href="" class="list-group-item active">
+                                      <h4 class="list-group-item-heading"> </h4>
+                                      <p class="list-group-item-text">Tłuszcze</p>
+                                    </a>
+                                    <a href="" class="list-group-item">
+                                      <h4 class="list-group-item-heading">{{ formData.text2.kalorie }}</h4>
+                                      <p class="list-group-item-text">Kalorii</p>
+                                    </a>
+                                   
+                        </div></div>
+
+                        </div>
+                          
+<div class="text-center">
+<button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Dodaj Posiłek</button><br>
+</div>
+        
+</form>
+
+<div ng-repeat="todo in todos">
+                        <div class="col-sm-4" >
+
+                           
+                        <div class="list-group" >
+                                    <a href="" class="list-group-item active">
+                                      <h4 class="list-group-item-heading" ng-model="formData.text" ng-click="deleteTodo(todo._id)"> {{ todo.text.nazwa }} ,</h4>
+                                      <p class="list-group-item-text">{{ todo.text.macro }}</p>
+                                    </a>
+                                    <a href="" class="list-group-item">
+                                      <h4 class="list-group-item-heading">{{ todo.text.kalorie }}</h4>
+                                      <p class="list-group-item-text">Kalorii</p>
+                                    </a>
+                                    <a href="" class="list-group-item">
+                                        
+                                      <h4 class="list-group-item-heading"> <h6>{{todo.text.weglowodany }}g Węglowodanów</h6></h4>
+                                                                            <h6>{{todo.text.bialka}}g Białka</h6></h4>
+                                                                            <h6>{{todo.text.tluszcze }}g Tłuszczów</h6></h4>
+
+                                     </a>
+                        </div></div>
+
+
+                        <div class="col-sm-4" >
+
+                           
+                        <div class="list-group" >
+                                    <a href="" class="list-group-item active">
+                                      <h4 class="list-group-item-heading" ng-model="formData.text" ng-click="deleteTodo(todo._id)"> {{ todo.text1.nazwa }} </h4>
+                                      <p class="list-group-item-text">{{ todo.text1.macro }}</p>
+                                    </a>
+                                    <a href="" class="list-group-item">
+                                      <h4 class="list-group-item-heading">{{ todo.text1.kalorie }}</h4>
+                                      <p class="list-group-item-text">Kalorii</p>
+                                    </a>
+                                    <a href="" class="list-group-item">
+                                        
+                                      <h4 class="list-group-item-heading"> <h6>{{todo.text1.weglowodany }}g Węglowodanów</h6></h4>
+                                                                            <h6>{{todo.text1.bialka}}g Białka</h6></h4>
+                                                                            <h6>{{todo.text1.tluszcze }}g Tłuszczów</h6></h4>
+
+                                     </a>
+                        </div></div>
+
+
+                        <div class="col-sm-4" >
+
+                           
+                        <div class="list-group" >
+                                    <a href="" class="list-group-item active">
+                                      <h4 class="list-group-item-heading" ng-model="formData.text" ng-click="deleteTodo(todo._id)"> {{ todo.text2.nazwa }} </h4>
+                                      <p class="list-group-item-text">{{ todo.text2.macro }}</p>
+                                    </a>
+                                    <a href="" class="list-group-item">
+                                      <h4 class="list-group-item-heading">{{ todo.text2.kalorie }}</h4>
+                                      <p class="list-group-item-text">Kalorii</p>
+                                    </a>
+                                    <a href="" class="list-group-item">
+                                        
+                                      <h4 class="list-group-item-heading"> <h6>{{todo.text2.weglowodany }}g Węglowodanów</h6></h4>
+                                                                            <h6>{{todo.text2.bialka}}g Białka</h6></h4>
+                                                                            <h6>{{todo.text2.tluszcze }}g Tłuszczów</h6></h4>
+
+                                     </a>
+                        </div></div>
+
+<div class="jumbotron text-center">
+    <h4>Posiłek ma {{ (todo.text1.kalorie)+(todo.text.kalorie)+(todo.text2.kalorie) }} kcal 
+    w tym
+    {{ (todo.text1.bialka)+(todo.text.bialka)+(todo.text2.bialka) }} g    białka, 
+    {{ (todo.text1.weglowodany)+(todo.text.weglowodany)+(todo.text2.weglowodany) }}  g  węglowodanów i
+    {{ (todo.text1.tluszcze)+(todo.text.tluszcze)+(todo.text2.tluszcze) }} g tłuszczy
+    
+    </h4>
+		</div>
+
+</div>
+
+</diV>

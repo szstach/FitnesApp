@@ -1,0 +1,173 @@
+<div ng-controller="mainControllerf">
+<div ng-controller="FormController" ng-show="form.$submitted">
+                                  <div ng-show="form.$valid" class="alert alert-success">
+                                      <strong>Sukces!</strong> Twoje dane zostały zapisane! <br>
+
+                                      <pre> {{ formA.namee }} </pre> <BR>
+
+                                                          
+
+                                 BMI    {{  bbi() | number:2 }} <br>
+                                 Płec   {{  plec }} <br>
+                                 Aktywnosc {{ aktywnosc }} <br>
+                                 Twój cel to {{ cel }} <br>
+                                      {{ kalorie() | limitTo:4 }} kcal<br>
+
+
+                                  </div>
+
+<!--
+                                  <div ng-show="form.$invalid" class="alert alert-warning">
+                                      <strong>Uwaga!</strong> Popraw błędy formularza!
+                                  </div>
+-->
+          </div>
+<form  ng-hide="form.$submitted" name="form" class="form-horizontal"  id="formA">
+<fieldset>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="uName">Imię</label>  
+  <div class="col-md-4">
+  <input 
+        id="uName" 
+        ng-model="formA.namee"
+        name="uName" 
+        type="text" 
+        required="required"
+        placeholder="podaj swoje imię" 
+        class="form-control">
+          <div ng-show="form.$submitte || form.uName.$touched">
+          <span ng-show="form.uName.$error.required">Musisz podać imię !</span>
+          </div>
+  </div>
+</div>
+
+<!-- Multiple Radios -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="plec">Płeć</label>
+  <div class="col-md-4">
+  <div class="radio">
+    <label for="plec-0">
+      <input type="radio" ng-model="formA.plec" name="plec" id="plec-0" value="mezczyzna" checked="checked" required="required">
+      Mężczyzna
+    </label>
+    </div>
+  <div class="radio">
+    <label for="plec-1">
+      <input type="radio" ng-model="formA.plec" name="plec" id="plec-1" value="kobieta" required="required">
+      Kobieta
+    </label>
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="uWaga">Waga</label>  
+  <div class="col-md-4">
+  <input 
+          id="uWaga" 
+          name="uWaga" 
+          type="number" 
+          ng-model="formA.waga"
+          required="required"
+          placeholder="Na czczo" 
+          min="40"
+          max="180"
+          ng-keyup="AddNumbers()"
+          class="form-control input-md" 
+          onkeyup="this.value = this.value.replace(/\D/g, '')">
+           <div ng-show="form.$submitted || form.uWaga.$touched">
+                                <span ng-show="form.uWaga.$error.required" class="info-block">Podaj swoją wagę</span>
+                                <span ng-show="form.uWaga.$error.min" class="info-block">Tak mało napewno nie ważysz</span>
+                                <span ng-show="form.uWaga.$error.max" class="info-block">Nie przesadzaj {{ user.uWaga }}</span>
+           </div>
+
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="uWzrost">Wzrost</label>  
+  <div class="col-md-4">
+  <input 
+      id="uWzrost" 
+      name="uWzrost" 
+      ng-model="formA.wzrost"
+      required="required"
+      min="120"
+      max="240"
+      ng-keyup="AddNumbers()"
+      type="number" 
+      placeholder="Twój wzrost w cm" 
+      class="form-control input-md">
+      <div  ng-show="form.$submitted || form.uWzrost.$touched">
+                                <span ng-show="form.uWzrost.$error.required" class="info-block">Podaj swój wzrost</span>
+                                <span ng-show="form.uWzrost.$error.min" class="info-block">Jesteś za mały na dietę :)</span>
+                                <span ng-show="form.uWzrost.$error.max" class="info-block">Takich ludzi nie ma :)</span>
+      </div>
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="uWiek">Wiek</label>  
+  <div class="col-md-4">
+  <input 
+      id="uWiek" 
+      name="uWiek"
+      ng-model="formA.wiek"
+      required="required"
+      type="number" 
+      min="16"
+      max="110"
+      placeholder="Ile masz lat" 
+      class="form-control input-md">
+
+          <div ng-show="form.$submitted || form.uWiek.$touched">
+                                <span ng-show="form.uWiek.$error.required" class="info-block">Podaj swój wiek</span>
+                                <span ng-show="form.uWiek.$error.min" class="info-block">Jesteś za młody na dietę</span>
+                                <span ng-show="form.uWiek.$error.max" class="info-block">Wydaje mi się że, nie żyjesz  ]:-> </span>
+      </div>
+    
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="aktywnosc">Aktywność</label>
+  <div class="col-md-4">
+    <select ng-model="formA.aktywnosc" id="aktywnosc" name="aktywnosc" class="form-control">
+      <option value="1">Brak aktywności</option>
+      <option value="1.11">Mała aktywność</option>
+      <option value="1.26">Duża aktywność</option>
+      <option value="1.47">Ogromna aktywność</option>
+    </select>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="formData.cel">Cel</label>
+  <div class="col-md-4">
+    <select ng-model="formA.cel" id="cel" name="cel" class="form-control">
+      <option value="500">Ubytek wagi</option>
+      <option value="-500">Nabieranie masy</option>
+      <option value="0">Utrzymanie wagi</option>
+    </select>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="ok"></label>
+  <div class="col-md-4">
+    <button id="ok" name="ok" class="btn btn-success" ng-click="createForm()"><a href="#wyniki">Zatwierdź</a></button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
